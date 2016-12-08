@@ -40,6 +40,5 @@ public class Tailrec1Test {
 
     private void assertPositiveAndNegativ(int input) {
         assertFtailrec(input);
-        assertFtailrec(-input - 1);
     }
 }
