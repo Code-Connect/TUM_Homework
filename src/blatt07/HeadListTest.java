@@ -27,8 +27,7 @@ public class HeadListTest {
 
     @Test
     public void add_given0_includes0() throws Exception {
-        int info = 0;
-        assertAdd(info);
+        assertAdd(0);
     }
 
     @Test
@@ -47,8 +46,8 @@ public class HeadListTest {
     }
 
     private int[] buildRandomInput() {
-        int[] input = new int[randomInt(HeadListTest.RANGE)];
-        for (int i = 0; i < input.length; i++) input[i] = randomInt(HeadListTest.RANGE);
+        int[] input = new int[randomInt(RANGE)];
+        for (int i = 0; i < input.length; i++) input[i] = randomInt(RANGE);
         return input;
     }
 
@@ -80,25 +79,27 @@ public class HeadListTest {
 
     @Test
     public void remove_givenInvalidIndex_givenEmptyList_returnsIntegerMIN_VALUE() throws Exception {
-        Assert.assertEquals(ERROR, test.remove(-1));
-        Assert.assertEquals(ERROR, test.remove(-5));
-        Assert.assertEquals(ERROR, test.remove(-8));
-        Assert.assertEquals(ERROR, test.remove(0));
-        Assert.assertEquals(ERROR, test.remove(1));
+        assertRemoveError(-1, -5, -8, 0, 1);
+    }
+
+    private void assertRemoveError(int... index) {
+        for (int i : index) Assert.assertEquals(ERROR, test.remove(i));
     }
 
     @Test
     public void remove_givenInvalidIndex_returnsIntegerMIN_VALUE() throws Exception {
         assertAdd(0, 1, 2, 3, 4, 5);
-        Assert.assertEquals(ERROR, test.remove(-1));
-        Assert.assertEquals(ERROR, test.remove(7));
+        assertFirstElement(0, test.head);
+        assertRemoveError(-1, 7);
     }
 
     @Test
-    public void remove_given1_returns1() throws Exception {
+    public void remove_givenIndex1_returns2() throws Exception {
         int[] input = {1, 2, 3, 4, 5};
         assertAdd(input);
+        assertFirstElement(1, test.head);
         assertRemove(1, input);
+        assertFirstElement(1, test.head);
     }
 
     @Test
@@ -123,6 +124,9 @@ public class HeadListTest {
             int index = randomInt(i);
             assertRemove(index, input);
             input = removeElement(input, index);
+            if (i > 0)
+                assertFirstElement(input[0], test.head);
+            assertHead(test.head);
         }
     }
 
@@ -171,11 +175,19 @@ public class HeadListTest {
         test.reverse();
 
         if (input.length > 0) {
-            Assert.assertEquals(list.get(0), test.head.first.elem);
+            assertFirstElement(list.get(0), test.head);
             assertHead(test.head.first);
         }
         Assert.assertEquals(Arrays.toString(listToArray(list))
                 .replace(", ", ","), test.toString());
+    }
+
+    private void assertFirstElement(Object expected, HeadList.Entry entry) {
+        try {
+            Assert.assertEquals(expected, entry.first.elem);
+        } catch (NullPointerException e) {
+            Assert.fail("Please be sure that Head includes the first element ;)");
+        }
     }
 
     private Object[] listToArray(List list) {
@@ -188,6 +200,7 @@ public class HeadListTest {
     public void reverse_given12345_includes54321() throws Exception {
         assertReverse(1, 2, 3, 4, 5);
     }
+
     @Test
     public void reverse_givenRandom() throws Exception {
         assertReverse(buildRandomInput());
@@ -198,7 +211,7 @@ public class HeadListTest {
         HeadList list = new HeadList();
         assertList(list, "[]");
     }
-    
+
     @Test
     public void testAdd() {
         HeadList list = new HeadList();
@@ -210,7 +223,7 @@ public class HeadListTest {
         assertList(list, "[1337,42,0]");
         list.add(-88);
         assertList(list, "[1337,42,0,-88]");
-        
+
         HeadList list2 = new HeadList();
         list2.add(-19);
         assertList(list2, "[-19]");
@@ -224,22 +237,22 @@ public class HeadListTest {
         list.add(1337);
         list.add(17);
         list.add(42);
-        
+
         assertListRemove(list, -1, Integer.MIN_VALUE);
         assertList(list, "[0,-18,1337,17,42]");
-        
+
         assertListRemove(list, 5, Integer.MIN_VALUE);
         assertList(list, "[0,-18,1337,17,42]");
-        
+
         assertListRemove(list, 0, 0);
         assertList(list, "[-18,1337,17,42]");
-        
+
         assertListRemove(list, 4, Integer.MIN_VALUE);
         assertList(list, "[-18,1337,17,42]");
-        
+
         assertListRemove(list, 3, 42);
         assertList(list, "[-18,1337,17]");
-        
+
         assertListRemove(list, 1, 1337);
         assertList(list, "[-18,17]");
     }
@@ -252,27 +265,27 @@ public class HeadListTest {
         list.add(1337);
         list.add(-90);
         list.add(0);
-        
+
         assertList(list, "[17,42,1337,-90,0]");
         list.reverse();
         assertList(list, "[0,-90,1337,42,17]");
-        
+
         list = new HeadList();
         list.reverse();
         assertList(list, "[]");
-        
+
         list = new HeadList();
         list.add(0);
         list.reverse();
         assertList(list, "[0]");
-        
+
         list = new HeadList();
         list.add(1);
         list.add(2);
         list.reverse();
         assertList(list, "[2,1]");
     }
-    
+
     private void assertListRemove(HeadList list, int index, int expected) {
         Assert.assertEquals(expected, list.remove(index));
     }
