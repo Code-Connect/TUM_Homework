@@ -151,7 +151,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void applyMove_given11_thenXAt00() throws Exception {
-        board = new boolean[1][1];
+        nrColumns = 1;
+        nrRows = 1;
+        initBoard();
         boolean[][] expected = {{true}};
 
         applyMove(11);
@@ -164,7 +166,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void applyMove_given23_thenXAt12() throws Exception {
-        board = new boolean[2][3];
+        nrColumns = 2;
+        nrRows = 3;
+        initBoard();
         boolean[][] expected = new boolean[2][3];
         expected[1][2] = true;
 
@@ -174,6 +178,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void mainLoop_givenN1_thenEnd() throws Exception {
+        nrColumns = 1;
+        nrColumns = 1;
+        initBoard();
         addReadIntOutput(-1);
         mainLoop();
         assertReadIntCounter(1);
@@ -185,7 +192,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void mainLoop_given2x2Board_thenEnd() throws Exception {
-        board = new boolean[2][2];
+        nrColumns = 2;
+        nrRows = 2;
+        initBoard();
         addReadIntOutput(11);
 
         mainLoop();
@@ -194,7 +203,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void mainLoop_given3x3Board_thenEnd() throws Exception {
-        board = new boolean[3][3];
+        nrColumns = 3;
+        nrRows = 3;
+        initBoard();
         addReadIntOutput(11,23);
 
         mainLoop();
@@ -203,7 +214,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void mainLoop_givenInvalidInput_given3x3Board_thenAskAgain() throws Exception {
-        board = new boolean[3][3];
+        nrColumns = 3;
+        nrRows = 3;
+        initBoard();
         addReadIntOutput(11,22,23);
 
         mainLoop();
@@ -212,6 +225,9 @@ public class DameSpielTest extends DameSpiel {
 
     @Test
     public void integration_givenWhiteStarts_thenBlackWinns() throws Exception {
+        nrColumns = 5;
+        nrRows = 5;
+        initBoard();
         addReadIntOutput(5,5,11,23,42,35,54);
         addReadStringOutput("true");
 
