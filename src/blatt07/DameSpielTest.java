@@ -206,7 +206,7 @@ public class DameSpielTest extends DameSpiel {
         nrColumns = 3;
         nrRows = 3;
         initBoard();
-        addReadIntOutput(11,23);
+        addReadIntOutput(11, 23);
 
         mainLoop();
         assertReadIntCounter(2);
@@ -217,18 +217,15 @@ public class DameSpielTest extends DameSpiel {
         nrColumns = 3;
         nrRows = 3;
         initBoard();
-        addReadIntOutput(11,22,23);
+        addReadIntOutput(11, 22, 23);
 
         mainLoop();
         assertReadIntCounter(3);
     }
 
     @Test
-    public void integration_givenWhiteStarts_thenBlackWinns() throws Exception {
-        nrColumns = 5;
-        nrRows = 5;
-        initBoard();
-        addReadIntOutput(5,5,11,23,42,35,54);
+    public void integration_givenWhiteStarts_thenWhiteWins() throws Exception {
+        addReadIntOutput(5, 5, 11, 23, 42, 35, 54);
         addReadStringOutput("true");
 
         startGame();
