@@ -52,9 +52,13 @@ public class MoneyTest {
 
     private void assertAddMoney(int expected, int addition) {
         int oldCent = test.getCent();
+        Money output = test.addMoney(new Money(addition));
+        String function = "addMoney(" + addition + ")";
+
+        Assert.assertNotNull(function + " shall not return null!", output);
         Assert.assertEquals(messageFunction("addMoney(" + addition + ")" +
                         "; given cent == " + oldCent),
-                expected, test.addMoney(new Money(addition)).getCent());
+                expected, output.getCent());
         Assert.assertEquals("Money Shell be Immutable!", oldCent, test.getCent());
     }
 
