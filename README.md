@@ -2,7 +2,9 @@
 UnitTests for current Homework
 
 ##Setup
-Add JUnit4 to the Libraries of your Project.
+Add JUnit4 to the Libraries of your Project*.
+
+*Not required for BlueJ
 
 ###Eclipse
 1. Select the Project
@@ -21,3 +23,6 @@ https://www.youtube.com/watch?v=C6oQqbqPBB0
 You don't need to use a TestFolder (it is just a bit cleaner).
 
 https://www.youtube.com/watch?v=Bld3644bIAo
+
+###BlueJ
+BlueJ automatically comes with JUnit, thus you will not need to import it into your project. Simply copy the Java Unit Test File into your projects folder and restart BlueJ (fix any packages if required). The Unit Test should be availible, like your other classes. Simply right click it and hit Test All.
