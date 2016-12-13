@@ -27,7 +27,7 @@ public class MoneyTest {
     }
 
     private void assertMoney(int expected) {
-        Assert.assertEquals("check the Variable: cent", expected, test.getCent());
+        Assert.assertEquals("Check the Variable: cent", expected, test.getCent());
     }
 
     @Test
@@ -77,6 +77,16 @@ public class MoneyTest {
     }
 
     @Test
+    public void toString_given10_returns0_10_Euro() throws Exception {
+        assertToString("0,10 Euro", 10);
+    }
+
+    @Test
+    public void toString_given1_returns0_01_Euro() throws Exception {
+        assertToString("0,01 Euro", 1);
+    }
+
+    @Test
     public void toString_given10010_returns100_10_Euro() throws Exception {
         assertToString("100,10 Euro", 10010);
     }
@@ -84,6 +94,21 @@ public class MoneyTest {
     @Test
     public void toString_given12345_returns123_45_Euro() throws Exception {
         assertToString("123,45 Euro", 12345);
+    }
+
+    @Test
+    public void toString_givenNegative_given100_returnsN1_00_Euro() throws Exception {
+        assertToString("-0,10 Euro", -10);
+    }
+
+    @Test
+    public void toString_givenNegative_given10_returnsN0_10_Euro() throws Exception {
+        assertToString("-1,00 Euro", -100);
+    }
+
+    @Test
+    public void toString_givenNegative_given110_returnsN1_10_Euro() throws Exception {
+        assertToString("-1,10 Euro", -110);
     }
 
     private void assertToString(String expected, int input) {
