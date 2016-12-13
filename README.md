@@ -2,7 +2,7 @@
 UnitTests for current Homework
 
 ###Official Telegram Channel
-https://telegram.me/tumtests
+https://telegram.me/TUMPGdPUnitTests
 
 ##Setup
 Add JUnit4 to the Libraries of your Project*.
