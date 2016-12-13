@@ -1,4 +1,4 @@
-package blatt08.pgdp;
+package blatt08.pgdp; //TODO move to package: pgdp
 
 public class Bank {
     /*private*/ BankAccountList accounts; //TODO make private
