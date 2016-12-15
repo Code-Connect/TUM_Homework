@@ -250,7 +250,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         append(4);
 
-        assertIncreaseCalls(0);
         assertStack(3, 0, expected);
     }
 
@@ -261,7 +260,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeFirst();
 
-        assertDecreaseCalls(0);
         assertStack(-1, -1, expected);
     }
 
@@ -272,7 +270,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeFirst();
 
-        assertDecreaseCalls(0);
         assertStack(3, 7, expected);
     }
 
@@ -283,7 +280,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeFirst();
 
-        assertDecreaseCalls(0);
         assertStack(0, 4, expected);
     }
 
@@ -320,7 +316,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertDecreaseCalls(0);
         assertStack(-1, -1, expected);
     }
 
@@ -331,7 +326,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertDecreaseCalls(0);
         assertStack(3, 7, expected);
     }
 
@@ -342,7 +336,6 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertDecreaseCalls(0);
         assertStack(3, 9, expected);
     }
     @Test
