@@ -63,7 +63,7 @@ public class MoneyTest {
     }
 
     @Test
-    public void addMoney_given10_given30_returns10() throws Exception {
+    public void addMoney_given10_given30_returns40() throws Exception {
         test = new Money(10);
         assertAddMoney(40, 30);
     }
