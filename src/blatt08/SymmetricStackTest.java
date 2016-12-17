@@ -26,10 +26,14 @@ public class SymmetricStackTest extends SymmetricStack {
     }
 
     private void assertStack(int expFirst, int expLast, int... expData) {
+        assertFirstAndLast(expFirst, expLast);
+        Assert.assertArrayEquals(toString(), expData, getData());
+    }
+    
+    private void assertFirstAndLast(int expFirst, int expLast) {
         String var = "First";
         Assert.assertEquals(messageVariable(var), expFirst, getFirst());
         Assert.assertEquals(messageVariable("Last"), expLast, getLast());
-        Assert.assertArrayEquals(toString(), expData, getData());
     }
 
     private String messageVariable(String var) {
@@ -256,11 +260,10 @@ public class SymmetricStackTest extends SymmetricStack {
     @Test
     public void removeFirst_given1Element_thenStackIsEmpty() throws Exception {
         buildStack(0, 0, 2);
-        int[] expected = {0};
 
         removeFirst();
 
-        assertStack(-1, -1, expected);
+        assertFirstAndLast(-1, -1);
     }
 
     @Test
@@ -270,7 +273,7 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeFirst();
 
-        assertStack(3, 7, expected);
+        assertFirstAndLast(3, 7);
     }
 
     @Test
@@ -280,7 +283,7 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeFirst();
 
-        assertStack(0, 4, expected);
+        assertFirstAndLast(0, 4);
     }
 
     @Test
@@ -291,7 +294,7 @@ public class SymmetricStackTest extends SymmetricStack {
         removeFirst();
 
         assertDecreaseCalls(1);
-        assertStack(1, 2, expected);
+        assertFirstAndLast(1, 2);
     }
 
     private void assertDecreaseCalls(int expected) {
@@ -316,7 +319,7 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertStack(-1, -1, expected);
+        assertFirstAndLast(-1, -1);
     }
 
     @Test
@@ -326,7 +329,7 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertStack(3, 7, expected);
+        assertFirstAndLast(3, 7);
     }
 
     @Test
@@ -336,7 +339,7 @@ public class SymmetricStackTest extends SymmetricStack {
 
         removeLast();
 
-        assertStack(3, 9, expected);
+        assertFirstAndLast(3, 9);
     }
     @Test
     public void removeLast_givenFirst5_givenLast7_givenSize9_makesSize4() throws Exception {
@@ -346,7 +349,7 @@ public class SymmetricStackTest extends SymmetricStack {
         removeLast();
 
         assertDecreaseCalls(1);
-        assertStack(1, 2, expected);
+        assertFirstAndLast(1, 2);
     }
 
 }
