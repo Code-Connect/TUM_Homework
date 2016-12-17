@@ -20,12 +20,14 @@ Add JUnit4 to the Libraries of your Project*.
 https://youtu.be/CD5JJ5bDAfY?t=2m33s
 
 ###NetBeans
-You don't need to use a TestFolder (it is just a bit cleaner).
+- Either put the Test and Production Code (your code) into the TestFolder
+- Or be sure to fix your imports and scope (it is just a bit cleaner).
 
 https://www.youtube.com/watch?v=C6oQqbqPBB0
 
 ###IntelliJ
-You don't need to use a TestFolder (it is just a bit cleaner).
+- Either put the Test and Production Code (your code) into the TestFolder
+- Or be sure to fix your imports and scope (it is just a bit cleaner).
 
 https://www.youtube.com/watch?v=Bld3644bIAo
 
