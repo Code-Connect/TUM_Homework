@@ -31,8 +31,7 @@ public class SymmetricStackTest extends SymmetricStack {
     }
 
     private void assertFirstAndLast(int expFirst, int expLast) {
-        String var = "First";
-        Assert.assertEquals(messageVariable(var), expFirst, getFirst());
+        Assert.assertEquals(messageVariable("First"), expFirst, getFirst());
         Assert.assertEquals(messageVariable("Last"), expLast, getLast());
     }
 
