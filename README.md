@@ -6,22 +6,28 @@ https://telegram.me/TUMPGdPUnitTests
 ###Telegram Chat Group
 https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw
 
-##Setup
-Add JUnit4 to the Libraries of your Project*.
+##Purpose of a Unit Test
+The Unit Test's purpose, is to help identify errors in the programs written for PGDP. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
-*Not required for BlueJ
+##Setup
+The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here
 
 ###Eclipse
 1. Select the Project
 2. Click: Project > Properties
 3. Click: Java Build Path > Libraries > Add Library...
-4. Click: Junit > Next > Select Junit 4 (or highter) > Finish
+4. Click: Junit > Next > Select Junit 4 (or higher) > Finish
 
 https://youtu.be/CD5JJ5bDAfY?t=2m33s
 
 ###NetBeans
-- Either put the Test and Production Code (your code) into the TestFolder
-- Or be sure to fix your imports and scope (it is just a bit cleaner).
+1. Select the Project
+2. Right click on Libaries
+3. Add Libary
+4. Select "Junit 4.12" (or higher) and add libary
+5. Right Click on Project > New > Other > Junit Test
+6. Move your method and the method's test class into the Junit Test
+7. Right Click on MethodNameTest > Test File 
 
 https://www.youtube.com/watch?v=C6oQqbqPBB0
 
