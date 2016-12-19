@@ -99,7 +99,7 @@ public class BankTest {
     }
 
     @Test
-    public void removeAccount_givenOneAccount_removesIt() throws Exception {
+    public void removeAccount_givenOneAccount_thenAccountsIsNull() throws Exception {
         int number = assertNewAccount(0);
         assertRemoveAccountNull(number);
     }
@@ -159,6 +159,13 @@ public class BankTest {
     }
 
     @Test
+    public void removeAccount_given5Accounts_remove2ThenRemove1_Returns034() throws Exception {
+        int[] numbers = assertMultipleNewAccounts(0, 1, 2, 3, 4);
+        assertRemoveAccountNotNull(numbers[2]);
+        assertRemoveAccountNotNull(numbers[1]);
+    }
+
+    @Test
     public void getBalance_givenEmpty_returnsNull() throws Exception {
         assertGetBalance(null, -1);
     }
@@ -191,7 +198,7 @@ public class BankTest {
     @Test
     public void getBalance_givenNewAccount_returns0() throws Exception {
         int[] numbers = assertMultipleNewAccounts(0, 1, 2, 3);
-        assertGetBalance(new Money(), numbers[2]);
+        assertGetBalance(new Money(0), numbers[2]);
     }
 
     @Test
