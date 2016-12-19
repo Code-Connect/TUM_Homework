@@ -10,7 +10,7 @@ UnitTests for current Homework
 The Unit Test's purpose, is to help identify errors in the programs written for PGDP. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
 ##Setup
-The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here
+The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue. 
 
 ###Eclipse
 1. Select the Project
@@ -38,4 +38,9 @@ https://www.youtube.com/watch?v=C6oQqbqPBB0
 https://www.youtube.com/watch?v=Bld3644bIAo
 
 ###BlueJ
-BlueJ automatically comes with JUnit, thus you will not need to import it into your project. Simply copy the Java Unit Test File into your projects folder and restart BlueJ (fix any packages if required). The Unit Test should be availible, like your other classes. Simply right click it and hit Test All.
+BlueJ automatically comes with JUnit, thus you will not need to import it into your project. 
+
+1. Copy the Test Files into your Project
+2. Restart BlueJ
+3. Compile. The Unit Test should turn Green
+4. Right Click on the Unit Test and hit Test All (or the specific Test you require)
