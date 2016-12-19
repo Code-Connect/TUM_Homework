@@ -159,12 +159,12 @@ public class FruitBasketTest {
         assertGetEqualOrLongerShelfLife(input, fruits, 1, 3, 4, 5);
     }
 
-    @Test
+     @Test
     public void getEqualOrLongerShelfLife_given7_returnEL7() throws Exception {
         ArrayList<Fruit> fruits = arrangeFruits();
         int input = 7;
 
-        assertGetEqualOrLongerShelfLife(input, fruits, 2);
+        assertGetEqualOrLongerShelfLife(input, fruits, 1, 2, 3, 4, 5);
     }
 
 }
