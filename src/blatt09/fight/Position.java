@@ -132,4 +132,8 @@ public class Position {
 
     public void sunset() {//TODO Please Rename; by CC
     }
+
+    public void setMyAnimals(Animal... myAnimals) {
+        this.myAnimals = myAnimals;
+    }
 }
