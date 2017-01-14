@@ -223,7 +223,7 @@ public class PositionTest {
     private Predator buildPredator(boolean female) {
         return new Predator(female) {
             @Override
-            void eat() {
+            public void eat() {
             }
         };
     }
