@@ -201,7 +201,7 @@ public class AnimalsMovementTest_Marco {
                 CreateAnimal( new Horse(false), "e4"),
                 CreateAnimal( test, "e3"));
 
-        Move expected[] = {new Move("e3d3"), new Move("e3f3"), new Move("e3e2"), new Move("e3c1"), new Move("e3g1"), new Move("e3g5"), new Move("e3h6")};
+        Move expected[] = {new Move("e3d3"), new Move("e3f3"), new Move("e3e2"), new Move("e3c1"), new Move("e3g1"), new Move("e3g5"), new Move("e3h6"), new Move("e3b6")};
         assertMoves(test, expected);
     }
 
@@ -282,7 +282,7 @@ public class AnimalsMovementTest_Marco {
     public void HorseMovementFriendE1BoardFromA1() throws Exception {
         Horse test = new Horse(false);
         positionT.setMyAnimals(CreateAnimal(test, "a1"), CreateAnimal(new Rabbit(false), "c3"));
-        Move expected[] = {new Move("a1a2"), new Move("a1b1")};
+        Move expected[] = {new Move("a1a2"), new Move("a1b1"), new Move("a1d4")};
         assertMoves(test, expected);
     }
 
