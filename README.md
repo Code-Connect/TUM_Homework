@@ -9,6 +9,9 @@ UnitTests for current Homework
 ##Purpose of a Unit Test
 The Unit Test's purpose, is to help identify errors in the programs written for PGDP. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
+###DISCLAIMER
+As with any project, mistakes can be made. Do NOT solely rely on these tests, as it may occur that they miss cases. 
+
 ##Setup
 The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue. 
 
@@ -37,8 +40,9 @@ https://www.youtube.com/watch?v=C6oQqbqPBB0
 
 https://www.youtube.com/watch?v=Bld3644bIAo
 
-###BlueJ
-BlueJ automatically comes with JUnit, thus you will not need to import it into your project. 
+###BlueJ*(eremy)*
+BlueJ automatically comes with JUnit, thus you will not need to import it into your project.
+*Be aware that BLUEJ uses an _OUTDATED_ version of JUNIT, thus may not accept all methods used in the test. It is advisable to have eclipse of another IDE for testing purposes*
 
 1. Copy the Test Files into your Project
 2. Restart BlueJ
