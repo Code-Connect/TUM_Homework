@@ -62,7 +62,7 @@ public class AnimalTest {
                 },
                 {"Snake", new Snake(false), new Snake(true),
                         new String[]{"d2", "d4", "e5", "d6", "e7", "d8",
-                                "d4", "f4", "g3", "h4", "d2", "c3", "b2", "a3"},
+                                "f2", "f4", "g3", "h4", "e1", "c3", "b2", "a3"},
                         new String[]{"b2", "c1", "d2", "e1", "f2", "g1", "h2"},
                         new String[]{"b8", "d8", "f8", "a7", "c7", "e7", "g7"},
                 },
