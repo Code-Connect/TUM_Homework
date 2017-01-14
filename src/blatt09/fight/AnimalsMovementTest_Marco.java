@@ -8,7 +8,6 @@ import java.util.Arrays;
 
 public class AnimalsMovementTest_Marco {
     Position positionT;
-
     @Before
     public void initialize(){
         positionT = new Position();
@@ -26,7 +25,6 @@ public class AnimalsMovementTest_Marco {
 //        assertMoves(test, expected);
         assertMoves(expected, test.possibleMoves());
     }
-
     private void assertMoves(Move[] exp, Move[] actual) {
         Assert.assertNotNull("possibleMoves() shall not return null!", actual);
         Assert.assertEquals("possibleMoves() shall have another length\n"
@@ -68,6 +66,7 @@ public class AnimalsMovementTest_Marco {
         Move expected[] = {new Move("e3e4"), new Move("e3e5"), new Move("e3e2"), new Move("e3e1"), new Move("e3d3"), new Move("e3c3"), new Move("e3f3"), new Move("e3g3"), new Move("e3h3")};
         assertMoves(test, expected);
     }
+
 
 
     @Test
@@ -257,9 +256,9 @@ public class AnimalsMovementTest_Marco {
     public void SnakeMovementOnEmptyBoardFromA1() throws Exception {
         Snake test = new Snake(false);
         positionT.setMyAnimals(CreateAnimal(test, "a1"));
-        Move expected[] = {new Move("e3b2"), new Move("e3c1"), new Move("e3d2"),
-                new Move("e3e1"), new Move("e3f2"),
-                new Move("e3g1"), new Move("e3h2")};
+        Move expected[] = {new Move("a1b2"), new Move("a1c1"), new Move("a1d2"),
+                new Move("a1e1"), new Move("a1f2"),
+                new Move("a1g1"), new Move("a1h2")};
         assertMoves(test, expected);
     }
 
@@ -267,7 +266,7 @@ public class AnimalsMovementTest_Marco {
     public void SnakeMovementEnemyE1BoardFromA1() throws Exception {
         Snake test = new Snake(false);
         positionT.setMyAnimals(CreateAnimal(test, "a1"), CreateAnimal(new Rabbit(true), "e1"));
-        Move expected[] = {new Move("e3b2"), new Move("e3c1"), new Move("e3d2"), new Move("e3e1")};
+        Move expected[] = {new Move("a1b2"), new Move("a1c1"), new Move("a1d2"), new Move("a1e1")};
         assertMoves(test, expected);
     }
 
@@ -275,7 +274,7 @@ public class AnimalsMovementTest_Marco {
     public void SnakeMovementFriendE1BoardFromA1() throws Exception {
         Snake test = new Snake(false);
         positionT.setMyAnimals(CreateAnimal(test, "a1"), CreateAnimal(new Rabbit(false), "e1"));
-        Move expected[] = {new Move("e3b2"), new Move("e3c1"), new Move("e3d2")};
+        Move expected[] = {new Move("a1b2"), new Move("a1c1"), new Move("a1d2")};
         assertMoves(test, expected);
     }
 
