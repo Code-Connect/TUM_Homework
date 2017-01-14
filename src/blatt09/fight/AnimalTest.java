@@ -33,7 +33,7 @@ public class AnimalTest {
 
         return Arrays.asList(new Object[][]{
                 {"Elephant", new Elephant(false), new Elephant(true),
-                        new String[]{"e4,", "e5", "e6", "e7", "e8", "e2", "e8", "f3", "g3", "h3", "d3", "c3", "b3", "a3"},
+                        new String[]{"e4,", "e5", "e6", "e7", "e8", "e2", "e1", "f3", "g3", "h3", "d3", "c3", "b3", "a3"},
                         new String[]{"a2", "a3", "a4", "a5", "a6", "a7", "a8", "b1", "c1", "d1", "e1", "f1", "g1", "h1"},
                         new String[]{"a8", "b8", "c8", "d8", "e8", "f8", "g8", "h1", "h2", "h3", "h4", "h5", "h6", "h7"},
                 },
