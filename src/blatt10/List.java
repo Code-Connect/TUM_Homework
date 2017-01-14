@@ -1,4 +1,4 @@
-package blatt10.blatt10;
+package blatt10;
 
 public class List<T> {
 }

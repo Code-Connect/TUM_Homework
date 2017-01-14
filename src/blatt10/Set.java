@@ -1,6 +1,10 @@
-package blatt10.blatt10;
+package blatt10;
 
-public class Set<T> {
+import java.util.Iterator;
+import java.util.Spliterator;
+import java.util.function.Consumer;
+
+public class Set<T> implements Iterable<T> {
     final private List<T> list;
 
     public Set() {
@@ -11,7 +15,7 @@ public class Set<T> {
         return null;
     }
 
-    public List<T> remove(T e) {
+    public Set<T> remove(T e) {
         return null;
     }
 
@@ -27,8 +31,19 @@ public class Set<T> {
         return false;
     }
 
-    @Override
     public String toString() {
         return super.toString();
+    }
+
+    public Iterator<T> iterator() {
+        return null;
+    }
+
+    public void forEach(Consumer<? super T> action) {
+
+    }
+
+    public Spliterator<T> spliterator() {
+        return null;
     }
 }
