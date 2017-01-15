@@ -1,4 +1,4 @@
-package blatt10;
+package blatt10.set;
 
 import org.junit.Assert;
 import org.junit.Before;

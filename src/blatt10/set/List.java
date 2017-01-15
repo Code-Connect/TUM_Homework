@@ -1,4 +1,4 @@
-package blatt10;
+package blatt10.set;
 
 public class List<T> {
 }

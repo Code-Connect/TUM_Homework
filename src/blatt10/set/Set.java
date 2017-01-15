@@ -1,4 +1,4 @@
-package blatt10;
+package blatt10.set;
 
 import java.util.Iterator;
 import java.util.Spliterator;
