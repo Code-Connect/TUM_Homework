@@ -1,4 +1,4 @@
-package blatt10.exception;
+package blatt11.exception;
 
 import org.junit.Assert;
 import org.junit.Test;

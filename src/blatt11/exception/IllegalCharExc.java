@@ -1,4 +1,4 @@
-package blatt10.exception;
+package blatt11.exception;
 
 public class IllegalCharExc extends Exception {
     final private char used;

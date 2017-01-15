@@ -1,4 +1,4 @@
-package blatt10.exception;
+package blatt11.exception;
 
 public class Password {
     public Password(int nrUpperShould, int nrLowerShould, int nrSpecialShould, int nrNumbersShould, int lengthShould, char[] illegalChars) {

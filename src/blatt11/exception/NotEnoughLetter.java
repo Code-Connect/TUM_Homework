@@ -1,4 +1,4 @@
-package blatt10.exception;
+package blatt11.exception;
 
 public class NotEnoughLetter extends NotEnoughExc {
     public NotEnoughLetter(int should, int is) {

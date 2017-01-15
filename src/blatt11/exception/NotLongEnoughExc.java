@@ -1,4 +1,4 @@
-package blatt10.exception;
+package blatt11.exception;
 
 public class NotLongEnoughExc extends Exception {
     final private int should, is;
