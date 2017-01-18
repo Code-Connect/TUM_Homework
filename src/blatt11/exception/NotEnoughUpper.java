@@ -6,7 +6,6 @@ public class NotEnoughUpper extends NotEnoughLetter {
         super(-1, -1);
     }
 
-    @Override
     public String toString() {
         //TODO
         return this.getClass().getSimpleName();

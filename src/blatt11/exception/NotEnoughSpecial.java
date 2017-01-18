@@ -7,7 +7,6 @@ public class NotEnoughSpecial extends NotEnoughExc {
     }
 
 
-    @Override
     public String toString() {
         //TODO
         return this.getClass().getSimpleName();

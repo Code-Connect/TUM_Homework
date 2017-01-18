@@ -8,7 +8,6 @@ public class IllegalCharExc extends Exception {
         this.used = 0;
     }
 
-    @Override
     public String toString() {
         //TODO
         return this.getClass().getSimpleName();

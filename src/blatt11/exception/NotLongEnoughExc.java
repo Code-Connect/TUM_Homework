@@ -8,11 +8,4 @@ public class NotLongEnoughExc extends Exception {
         this.should = -1;
         this.is = -1;
     }
-
-    @Override
-    public String toString() {
-        //TODO
-        return this.getClass().getSimpleName();
-    }
-
 }

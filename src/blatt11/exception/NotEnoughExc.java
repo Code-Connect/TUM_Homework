@@ -9,7 +9,6 @@ public class NotEnoughExc extends Exception {
         this.should = -1;
     }
 
-    @Override
     public String toString() {
         //TODO
         return this.getClass().getSimpleName();
