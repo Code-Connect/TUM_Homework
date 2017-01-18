@@ -44,7 +44,7 @@ public class SetTest {
     private void assertList(String expected) {
         String listString = s.toString();
         char[] listChars = listString.toCharArray();
-		char[] expectedChars = ("{" + expected + "}").toCharArray();
+        char[] expectedChars = ("{" + expected + "}").toCharArray();
         for (char c : expectedChars) {
             boolean charFound = false;
             for (int i = 0; i < listChars.length; i++) {
@@ -56,7 +56,7 @@ public class SetTest {
             }
             if (!charFound) {
                 Assert.fail("expected: {" + expected + "} found: " + listString + "; Set does not contain (enough): " + c);
-			}
+            }
         }
     }
 
