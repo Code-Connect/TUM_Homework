@@ -1,8 +1,6 @@
 package blatt11.set;
 
 import java.util.Iterator;
-import java.util.Spliterator;
-import java.util.function.Consumer;
 
 public class Set<T> implements Iterable<T> {
     final private List<T> list;
@@ -15,11 +13,11 @@ public class Set<T> implements Iterable<T> {
         return null;
     }
 
-    public Set<T> remove(T e) {
+    public Set<T> remove(Object o) {
         return null;
     }
 
-    public boolean contains(T e) {
+    public boolean contains(Object o) {
         return false;
     }
 
@@ -36,14 +34,6 @@ public class Set<T> implements Iterable<T> {
     }
 
     public Iterator<T> iterator() {
-        return null;
-    }
-
-    public void forEach(Consumer<? super T> action) {
-
-    }
-
-    public Spliterator<T> spliterator() {
         return null;
     }
 }

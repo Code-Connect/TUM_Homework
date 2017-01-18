@@ -6,7 +6,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Spliterator;
 
 public class SetBonusTest {
     private Set<Integer> s;
@@ -52,6 +51,13 @@ public class SetBonusTest {
         assertList(expected.toArray(), actual);
     }
 
+    private void assertList(Object[] expected, ArrayList<Integer> actualList) {
+        Assert.assertArrayEquals("actual: " + actualList,
+                expected, actualList.toArray());
+    }
+
+    /*
+    //Not neccessary to get 2 BonusPoints, but nice to have
     @Test
     public void spliterator_givenEmptySet() throws Exception {
         assertSize(0);
@@ -129,11 +135,6 @@ public class SetBonusTest {
         assertList(new Object[]{4, 3, 2, 1}, spliteratorOut);
     }
 
-    private void assertList(Object[] expected, ArrayList<Integer> actualList) {
-        Assert.assertArrayEquals("actual: " + actualList,
-                expected, actualList.toArray());
-    }
-
     @Test
     public void spliterator_trySplit_withLoop_given1234() throws Exception {
         add(1, 2, 3, 4);
@@ -171,5 +172,5 @@ public class SetBonusTest {
         assertList(new Object[]{4}, s11Out);
         assertList(new Object[]{2}, s21Out);
     }
-
+*/
 }

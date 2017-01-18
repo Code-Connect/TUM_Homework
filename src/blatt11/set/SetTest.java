@@ -90,7 +90,19 @@ public class SetTest {
         assertContains(false, 9);
     }
 
-    private void assertContains(boolean expected, Integer entry) {
+    @Test
+    public void contains_given12345_givenWrongType_returnFalse() throws Exception {
+        add(1, 2, 3, 4, 5);
+        assertContains(false, 5.0);
+    }
+
+    @Test
+    public void contains_given123_givenArray_returnFalse() throws Exception {
+        add(1, 2, 3);
+        assertContains(false, new Integer[]{1});
+    }
+
+    private void assertContains(boolean expected, Object entry) {
         Assert.assertEquals(expected, s.contains(entry));
     }
 
@@ -117,7 +129,7 @@ public class SetTest {
         assertList("1,2");
     }
 
-    private Set<Integer> remove(Integer... integers) {
+    private Set<Integer> remove(Object... integers) {
         Arrays.stream(integers).forEach(integer -> s = s.remove(integer));
         return s;
     }
@@ -141,6 +153,25 @@ public class SetTest {
 
         assertList("1,2,4,5");
     }
+
+    @Test
+    public void remove_givenSet12345_givenNotFound_thenSetIs12345() throws Exception {
+        add(1, 2, 3, 4, 5);
+
+        remove(9);
+
+        assertList("1,2,3,4,5");
+    }
+
+    @Test
+    public void remove_givenSet12345_givenWrongType_thenSetIs12345() throws Exception {
+        add(1, 2, 3, 4, 5);
+
+        remove(3.0);
+
+        assertList("1,2,3,4,5");
+    }
+
 
     @Test
     public void size_givenEmptySet_returns0() throws Exception {
