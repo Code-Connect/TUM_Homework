@@ -41,12 +41,12 @@ public class PasswordTest extends Password {
                 {"", new NotEnoughSpecial(1, 0), 0, 0, 1, 0, 0, new char[]{}},
                 {"", new NotEnoughNumber(1, 0), 0, 0, 0, 1, 0, new char[]{}},
                 {"", new NotLongEnoughExc(1, 0), 0, 0, 0, 0, 1, new char[]{}},
-                {"\n", new IllegalCharExc('\n'), 0, 0, 0, 0, 1, new char[]{'\n'}},
+                {"\n", new IllegalCharExc('\n'), 0, 0, 0, 0, 0, new char[]{'\n'}},
+
                 {"A", new NotEnoughUpper(2, 1), 2, 0, 0, 0, 0, new char[]{}},
                 {"!", new NotEnoughSpecial(3, 1), 0, 0, 3, 0, 0, new char[]{}},
                 {null, null, nrUpperShould, nrLowerShould, nrSpecialShould, nrNumbersShould, lengthShould, new char[]{}},
         });
-
     }
 
     private static int randomInt(int range) {

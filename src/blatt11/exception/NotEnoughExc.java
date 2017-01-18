@@ -8,9 +8,4 @@ public class NotEnoughExc extends Exception {
         this.is = -1;
         this.should = -1;
     }
-
-    public String toString() {
-        //TODO
-        return this.getClass().getSimpleName();
-    }
 }
