@@ -1,3 +1,5 @@
+package blatt09.fight;
+
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -88,18 +90,19 @@ public class theWinnerTest_Marco {
     }
 
     public Animal CreateAnimal(Animal toCreate, String sq) {
-        if(toCreate instanceof Leopard) toCreate.withoutFood=5;
-        if(toCreate instanceof Penguin) toCreate.withoutFood=12;
-        if(toCreate instanceof Snake) toCreate.withoutFood=9;
+        if (toCreate instanceof Leopard) ((Predator) toCreate).withoutFood = 5;
+        if (toCreate instanceof Penguin) ((Predator) toCreate).withoutFood = 12;
+        if (toCreate instanceof Snake) ((Predator) toCreate).withoutFood = 9;
         toCreate.square = sq;
         toCreate.position = positionT;
         toCreate.alive = true;
         return toCreate;
     }
+
     public Animal CreateAnimal(Animal toCreate, String sq, boolean aliv) {
-        if(toCreate instanceof Leopard) toCreate.withoutFood=5;
-        if(toCreate instanceof Penguin) toCreate.withoutFood=12;
-        if(toCreate instanceof Snake) toCreate.withoutFood=9;
+        if (toCreate instanceof Leopard) ((Predator) toCreate).withoutFood = 5;
+        if (toCreate instanceof Penguin) ((Predator) toCreate).withoutFood = 12;
+        if (toCreate instanceof Snake) ((Predator) toCreate).withoutFood = 9;
         toCreate.square = sq;
         toCreate.position = positionT;
         toCreate.alive = aliv;
