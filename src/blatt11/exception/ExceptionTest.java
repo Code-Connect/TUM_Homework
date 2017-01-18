@@ -31,7 +31,6 @@ public class ExceptionTest {
                 {"IllegalCharExc: \\b", new IllegalCharExc('\b'), new Object[]{"\\b"}},
                 {"IllegalCharExc: \\f", new IllegalCharExc('\f'), new Object[]{"\\f"}},
 
-                {"NotEnoughLetter", new NotEnoughLetter(should, is), new Object[]{should, is}},
                 {"NotEnoughLower", new NotEnoughLower(should, is), new Object[]{should, is}},
                 {"NotEnoughNumber", new NotEnoughNumber(should, is), new Object[]{should, is}},
                 {"NotEnoughSpecial", new NotEnoughSpecial(should, is), new Object[]{should, is}},
