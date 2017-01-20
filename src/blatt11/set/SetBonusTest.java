@@ -29,7 +29,11 @@ public class SetBonusTest {
     public void iterator_givenEmptySet() throws Exception {
         Assert.assertNotNull(s.iterator());
         Assert.assertEquals(false, s.iterator().hasNext());
-        Assert.assertEquals(null, s.iterator().next());
+        try {
+            s.iterator().next();
+            Assert.fail("Empty iterator should throw NoSuchElemntException on next()");
+        }
+        catch (NoSuchElementException e) {}
     }
 
     @Test
