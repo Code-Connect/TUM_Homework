@@ -6,6 +6,8 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class SetBonusTest {
     private Set<Integer> s;
@@ -32,8 +34,15 @@ public class SetBonusTest {
         try {
             s.iterator().next();
             Assert.fail("Empty iterator should throw NoSuchElemntException on next()");
-        }
-        catch (NoSuchElementException e) {}
+        } catch (NoSuchElementException e) {}
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void iterator_callingNextToOften_throwsException() throws Exception {
+        Iterator<Integer> iterator = s.iterator();
+        Assert.assertNotNull(iterator);
+        while (true)
+            iterator.next();
     }
 
     @Test
