@@ -29,7 +29,11 @@ public class SetBonusTest {
     public void iterator_givenEmptySet() throws Exception {
         Assert.assertNotNull(s.iterator());
         Assert.assertEquals(false, s.iterator().hasNext());
-        Assert.assertEquals(null, s.iterator().next());
+        try {
+            s.iterator().next();
+            Assert.fail("Empty iterator should throw NoSuchElemntException on next()");
+        }
+        catch (NoSuchElementException e) {}
     }
 
     @Test
@@ -52,8 +56,14 @@ public class SetBonusTest {
     }
 
     private void assertList(Object[] expected, ArrayList<Integer> actualList) {
-        Assert.assertArrayEquals("actual: " + actualList,
-                expected, actualList.toArray());
+        for (Object o : expected) {
+            if (!actualList.contains(o))
+                Assert.fail("List does not contain: " + o);
+            else
+                actualList.remove(o);
+        }
+        if (!actualList.isEmpty())
+            Assert.fail("List contains additional elements: " + actualList);
     }
 
     /*
