@@ -1,4 +1,4 @@
-package blatt12;
+package blatt12.map;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -70,10 +70,15 @@ public class MapTest {
     }
 
     private static int f(int x) {
+        sleepFor(WAIT_MS);
+        return x * x;
+    }
+
+    public static void sleepFor(long milliseconds) {
         try {
             Thread exe = new Thread(() -> {
                 try {
-                    Thread.sleep(WAIT_MS);
+                    Thread.sleep(milliseconds);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -83,7 +88,6 @@ public class MapTest {
         } catch (InterruptedException e) {
             System.out.println(e);
         }
-        return x * x;
     }
 
     @Test
