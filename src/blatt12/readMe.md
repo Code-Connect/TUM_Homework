@@ -6,4 +6,8 @@
 - [ ] Find n Fixing
  
 #Rock-Paper-Scissors
-- [ ] Create TODO-List
+- [x] Test Player getChoice()
+- [x] Test Player interrupt()
+- [x] Test RockPaperScissors determineWinner
+- [x] Test RockPaperScissors kill Threads
+- [ ] Find n Fixing
