@@ -99,8 +99,7 @@ public class MapTest {
             thrown = e;
         }
         if (thrown != null)
-            Assert.assertEquals("you shall throw another Exception" +
-                            "\na: " + Arrays.toString(a) +
+            Assert.assertEquals("\na: " + Arrays.toString(a) +
                             "\nb: " + Arrays.toString(b) +
                             "\nn: " + n,
                     expected.toString(), thrown.toString());
