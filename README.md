@@ -2,7 +2,7 @@
 UnitTests for current Homework
 
 ####Telegram News Channel
-#####https://telegram.me/TUMPGdPUnitTests
+#####https://telegram.me/TUMUnitTests
 ####Telegram Chat Group
 #####https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw
 
