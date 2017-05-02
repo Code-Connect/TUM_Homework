@@ -7,7 +7,7 @@ UnitTests for current Homework
 #####https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw
 
 ##Purpose of a Unit Test
-The Unit Test's purpose, is to help identify errors in the programs written for PGDP. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
+The Unit Test's purpose, is to help identify errors in the programs written for PGDP and GAD. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
 ###DISCLAIMER
 As with any project, mistakes can be made. Do NOT solely rely on these tests, as it may occur that they miss cases. 
