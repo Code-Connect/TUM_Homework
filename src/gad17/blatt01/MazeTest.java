@@ -8,14 +8,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-class MazeTest extends Maze {
+public class MazeTest extends Maze {
     private ArrayList<Integer[]> actualDraw;
     private boolean actualReachable;
     private boolean[][] expectedSolution;
     private boolean[][] actualSolution;
 
     @Before
-    void setUp() {
+    public void setUp() {
         actualDraw = new ArrayList<>();
         actualReachable = false;
         expectedSolution = null;
