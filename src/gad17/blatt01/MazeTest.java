@@ -1,8 +1,8 @@
 package gad17.blatt01;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,7 @@ class MazeTest extends Maze {
     private boolean[][] expectedSolution;
     private boolean[][] actualSolution;
 
-    @BeforeEach
+    @Before
     void setUp() {
         actualDraw = new ArrayList<>();
         actualReachable = false;
@@ -163,12 +163,12 @@ class MazeTest extends Maze {
     }
 
     private void assertWalk(ArrayList<Integer[]> expectedWalk) {
-        Assertions.assertArrayEquals(expectedWalk.toArray(), actualDraw.toArray());
-        Assertions.assertArrayEquals(expectedSolution, actualSolution);
+        Assert.assertArrayEquals(expectedWalk.toArray(), actualDraw.toArray());
+        Assert.assertArrayEquals(expectedSolution, actualSolution);
     }
 
     private void assertReachable(boolean expected) {
-        Assertions.assertEquals(expected, actualReachable);
+        Assert.assertEquals(expected, actualReachable);
     }
 
     private ArrayList<Integer[]> buildWalk(int... input) {
