@@ -7,7 +7,7 @@
 * GAD SS17
 
 ### Contact
-* [https://telegram.me/TUMUnitTests}(Announcement / News Channel)
+* [https://telegram.me/TUMUnitTests](Announcement / News Channel)
 * [https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw](Chat)
 
 **You can also notify us of issues and bugs by submitting a GitHub issue.**
@@ -25,7 +25,7 @@ The Unit Test's purpose, is to help identify errors in the programs written for 
     3. Click: Java Build Path > Libraries > Add Library...
     4. Click: Junit > Next > Select Junit 4 (or higher) > Finish
 
-https://youtu.be/CD5JJ5bDAfY?t=2m33s
+>https://youtu.be/CD5JJ5bDAfY?t=2m33s
 
 ##### NetBeans
 
@@ -37,14 +37,14 @@ https://youtu.be/CD5JJ5bDAfY?t=2m33s
     6. Move your method and the method's test class into the Junit Test
     7. Right Click on MethodNameTest > Test File
 
-https://www.youtube.com/watch?v=C6oQqbqPBB0
+>https://www.youtube.com/watch?v=C6oQqbqPBB0
 
 ##### IntelliJ
 
     1. Either put the Test and Production Code (your code) into the TestFolder
     2. Or be sure to fix your imports and scope (it is just a bit cleaner).
 
-https://www.youtube.com/watch?v=Bld3644bIAo
+>https://www.youtube.com/watch?v=Bld3644bIAo
 
 ##### BlueJ
 BlueJ automatically comes with JUnit, thus you will not need to import it into your project. Be aware that BLUEJ uses an OUTDATED version of JUNIT, thus may not accept all methods used in the test. It is advisable to have eclipse of another IDE for testing purposes.
