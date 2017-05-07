@@ -1,4 +1,4 @@
-package gad17.blatt02
+package gad17.blatt02;
 
 /**
  * Die Klasse BinSea stellt Methoden bereit, in sortierten Feldern binär
@@ -29,9 +29,7 @@ class BinSea {
    * @return der passende Index, -1 wenn dieser nicht gefunden werden kann
    */
   private static int search (int[] sortedData, int value, boolean lower) {
-    /**
-     * Todo: Aufgabe a)
-     */
+      return runSearch(sortedData, value, lower);
   }
 
   /**
@@ -53,9 +51,23 @@ class BinSea {
    * @param valueRange der Wertebereich, zu dem Indices gesucht werden
    */
   public static Interval search (int[] sortedData, Interval valueRange) {
-    /**
-     * Todo: Aufgabe b)
-     */
+      return runSearch(sortedData, valueRange);
   }
+
+    //TODO inline after Testing
+    static int runSearch(int[] sortedData, int value, boolean lower) {
+        /**
+         * Todo: Aufgabe a)
+         */
+        return -1;
+    }
+
+    //TODO inline after Testing
+    static Interval runSearch(int[] sortedData, Interval valueRange) {
+        /**
+         * Todo: Aufgabe b)
+         */
+        return null;
+    }
 
 }
