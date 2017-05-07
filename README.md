@@ -16,7 +16,9 @@
 
 The Unit Test's purpose, is to help identify errors in the programs written for PGDP and GAD. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
-### Setup The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue.
+### Setup 
+
+The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue.
 
 ##### Eclipse
 
