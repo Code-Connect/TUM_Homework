@@ -1,6 +1,6 @@
 # Unit Tests for TUM Informatic's Homework
 
-## **Disclaimer: Do not solely rely on these Unit Tests for correction. Mistakes happen and sometimes things may slip past the tests. **
+## ** Disclaimer**: Do not solely rely on these Unit Tests for correction. Mistakes happen and sometimes things may slip past the tests. 
 
 ### Availible Subjects
 * EIDI 1 WS16
