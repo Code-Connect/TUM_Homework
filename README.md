@@ -1,6 +1,6 @@
 # Unit Tests for TUM Informatic's Homework
 
-## ** Disclaimer**: Do not solely rely on these Unit Tests for correction. Mistakes happen and sometimes things may slip past the tests. 
+## **Disclaimer**: Do not solely rely on these Unit Tests for correction. Mistakes happen and sometimes things may slip past the tests. 
 
 ### Availible Subjects
 * EIDI 1 WS16
@@ -9,7 +9,7 @@
 ### Contact
 * [https://telegram.me/TUMUnitTests}(Announcement / News Channel)
 * [https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw](Chat)
-**You can also notify us of issues and bugs by submitting a GitHub issue. **
+**You can also notify us of issues and bugs by submitting a GitHub issue.**
 
 ### Purpose of a Unit Test 
 
