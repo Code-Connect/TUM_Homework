@@ -1,50 +1,54 @@
-# TUM_Homework
-UnitTests for current Homework
+# Unit Tests for TUM Informatic's Homework
 
-####Telegram News Channel
-#####https://telegram.me/TUMUnitTests
-####Telegram Chat Group
-#####https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw
+## **Disclaimer: Do not solely rely on these Unit Tests for correction. Mistakes happen and sometimes things may slip past the tests. **
 
-##Purpose of a Unit Test
+### Availible Subjects
+* EIDI 1 WS16
+* GAD SS17
+
+### Contact
+* [https://telegram.me/TUMUnitTests}(Announcement / News Channel)
+* [https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw](Chat)
+**You can also notify us of issues and bugs by submitting a GitHub issue. **
+
+### Purpose of a Unit Test 
+
 The Unit Test's purpose, is to help identify errors in the programs written for PGDP and GAD. It does this by creating test cases, in which inputs are entered into the classes, methods being run and finally checking to see if the output is what is to be expected.
 
-###DISCLAIMER
-As with any project, mistakes can be made. Do NOT solely rely on these tests, as it may occur that they miss cases. 
+### Setup The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue.
 
-##Setup
-The setup of the UnitTests vary depending on the IDE. If your IDE is not listed here, post it as an issue. 
+##### Eclipse
 
-###Eclipse
-1. Select the Project
-2. Click: Project > Properties
-3. Click: Java Build Path > Libraries > Add Library...
-4. Click: Junit > Next > Select Junit 4 (or higher) > Finish
+    1. Select the Project
+    2. Click: Project > Properties
+    3. Click: Java Build Path > Libraries > Add Library...
+    4. Click: Junit > Next > Select Junit 4 (or higher) > Finish
 
 https://youtu.be/CD5JJ5bDAfY?t=2m33s
 
-###NetBeans
-1. Select the Project
-2. Right click on Libaries
-3. Add Libary
-4. Select "Junit 4.12" (or higher) and add libary
-5. Right Click on Project > New > Other > Junit Test
-6. Move your method and the method's test class into the Junit Test
-7. Right Click on MethodNameTest > Test File 
+##### NetBeans
+
+    1. Select the Project
+    2. Right click on Libaries
+    3. Add Libary
+    4. Select "Junit 4.12" (or higher) and add libary
+    5. Right Click on Project > New > Other > Junit Test
+    6. Move your method and the method's test class into the Junit Test
+    7. Right Click on MethodNameTest > Test File
 
 https://www.youtube.com/watch?v=C6oQqbqPBB0
 
-###IntelliJ
-- Either put the Test and Production Code (your code) into the TestFolder
-- Or be sure to fix your imports and scope (it is just a bit cleaner).
+##### IntelliJ
+
+    1. Either put the Test and Production Code (your code) into the TestFolder
+    2. Or be sure to fix your imports and scope (it is just a bit cleaner).
 
 https://www.youtube.com/watch?v=Bld3644bIAo
 
-###BlueJ*(eremy)*
-BlueJ automatically comes with JUnit, thus you will not need to import it into your project.
-*Be aware that BLUEJ uses an _OUTDATED_ version of JUNIT, thus may not accept all methods used in the test. It is advisable to have eclipse of another IDE for testing purposes*
+##### BlueJ
+BlueJ automatically comes with JUnit, thus you will not need to import it into your project. Be aware that BLUEJ uses an OUTDATED version of JUNIT, thus may not accept all methods used in the test. It is advisable to have eclipse of another IDE for testing purposes.
 
-1. Copy the Test Files into your Project
-2. Restart BlueJ
-3. Compile. The Unit Test should turn Green
-4. Right Click on the Unit Test and hit Test All (or the specific Test you require)
+    1. Copy the Test Files into your Project
+    2. Restart BlueJ
+    3. Compile. The Unit Test should turn Green
+    4. Right Click on the Unit Test and hit Test All (or the specific Test you require)
