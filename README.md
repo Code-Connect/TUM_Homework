@@ -7,8 +7,8 @@
 * GAD SS17
 
 ### Contact
-* [https://telegram.me/TUMUnitTests](Announcement / News Channel)
-* [https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw](Chat)
+* [Announcement / News Channel](https://telegram.me/TUMUnitTests)
+* [Chat](https://telegram.me/joinchat/CBbdCQtAOI9Qalx6JlYdcw)
 
 **You can also notify us of issues and bugs by submitting a GitHub issue.**
 
