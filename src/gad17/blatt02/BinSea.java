@@ -29,7 +29,7 @@ class BinSea {
    * @return der passende Index, -1 wenn dieser nicht gefunden werden kann
    */
   private static int search (int[] sortedData, int value, boolean lower) {
-      return runSearch(sortedData, value, lower);
+      return searchA(sortedData, value, lower);
   }
 
   /**
@@ -51,11 +51,11 @@ class BinSea {
    * @param valueRange der Wertebereich, zu dem Indices gesucht werden
    */
   public static Interval search (int[] sortedData, Interval valueRange) {
-      return runSearch(sortedData, valueRange);
+      return searchB(sortedData, valueRange);
   }
 
     //TODO inline after Testing
-    static int runSearch(int[] sortedData, int value, boolean lower) {
+    static int searchA(int[] sortedData, int value, boolean lower) {
         /**
          * Todo: Aufgabe a)
          */
@@ -63,7 +63,7 @@ class BinSea {
     }
 
     //TODO inline after Testing
-    static Interval runSearch(int[] sortedData, Interval valueRange) {
+    static Interval searchB(int[] sortedData, Interval valueRange) {
         /**
          * Todo: Aufgabe b)
          */
