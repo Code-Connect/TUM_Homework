@@ -2,12 +2,26 @@ package gad17.blatt02;
 
 import org.junit.Test;
 
-import static gad17.blatt02.BinSea.searchA;
-import static gad17.blatt02.BinSea.searchB;
+import java.lang.reflect.Method;
+
+import static gad17.blatt02.BinSea.search;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
 public class BinSeaTest {
+    private int searchA(int[] sortedData, int value, boolean lower) {
+        try {
+            BinSea test = new BinSea();
+            Method search = test.getClass().getDeclaredMethod("search",
+                    int[].class, int.class, boolean.class);
+            search.setAccessible(true);
+            return (int) search.invoke(test, sortedData, value, lower);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return -1;
+    }
+
     @Test
     public void testSearch() {
         int[] test = {-10, 33, 50, 99, 123, 4242};
@@ -42,7 +56,7 @@ public class BinSeaTest {
     public void testIntervalSearch() {
         int[] test = {-10, 33, 50, 99, 123, 4242};
         Interval testInterval = new NonEmptyInterval(80, 700);
-        Interval actual = searchB(test, testInterval);
+        Interval actual = search(test, testInterval);
         Interval expected = new NonEmptyInterval(3, 4);
 
         assertNotNull(actual);
@@ -53,7 +67,7 @@ public class BinSeaTest {
     public void testIntervalSearchExpectEmptyInterval() {
         int[] test = {-10, 33, 50, 99, 123, 4242};
         Interval testInterval = new NonEmptyInterval(4500, 5000);
-        Interval actual = searchB(test, testInterval);
+        Interval actual = search(test, testInterval);
 
         assert actual instanceof EmptyInterval;
     }
@@ -182,7 +196,7 @@ public class BinSeaTest {
     }
 
     private void assertSearchB(Interval expected, int[] sortedData, Interval valueRange) {
-        Interval actual = searchB(sortedData, valueRange);
+        Interval actual = search(sortedData, valueRange);
         assertNotNull(actual);
         assertEquals(expected.toString(),
                 actual.toString());
