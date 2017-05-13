@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.lang.reflect.Method;
 
-import static gad17.blatt02.BinSea.search;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
@@ -28,8 +27,8 @@ public class BinSeaTest {
         int lower = searchA(test, 80, true);
         int upper = searchA(test, 80, false);
 
-        assertEquals(2, lower);
-        assertEquals(3, upper);
+        assertEquals(3, lower);
+        assertEquals(2, upper);
     }
 
     @Test
@@ -38,8 +37,8 @@ public class BinSeaTest {
         int lower = searchA(test, 4300, true);
         int upper = searchA(test, 4300, false);
 
-        assertEquals(5, lower);
-        assertEquals(-1, upper);
+        assertEquals(-1, lower);
+        assertEquals(5, upper);
     }
 
     @Test
@@ -48,15 +47,15 @@ public class BinSeaTest {
         int lower = searchA(test, -100, true);
         int upper = searchA(test, -100, false);
 
-        assertEquals(-1, lower);
-        assertEquals(0, upper);
+        assertEquals(0, lower);
+        assertEquals(-1, upper);
     }
 
     @Test
     public void testIntervalSearch() {
         int[] test = {-10, 33, 50, 99, 123, 4242};
         Interval testInterval = new NonEmptyInterval(80, 700);
-        Interval actual = search(test, testInterval);
+        Interval actual = BinSea.search(test, testInterval);
         Interval expected = new NonEmptyInterval(3, 4);
 
         assertNotNull(actual);
@@ -67,7 +66,7 @@ public class BinSeaTest {
     public void testIntervalSearchExpectEmptyInterval() {
         int[] test = {-10, 33, 50, 99, 123, 4242};
         Interval testInterval = new NonEmptyInterval(4500, 5000);
-        Interval actual = search(test, testInterval);
+        Interval actual = BinSea.search(test, testInterval);
 
         assert actual instanceof EmptyInterval;
     }
@@ -99,7 +98,7 @@ public class BinSeaTest {
         int[] sortedData = {1};
         int value = 2;
 
-        assertSearchA(0, sortedData, value, true);
+        assertSearchA(-1, sortedData, value, true);
     }
 
     @Test
@@ -107,7 +106,7 @@ public class BinSeaTest {
         int[] sortedData = {1};
         int value = 2;
 
-        assertSearchA(-1, sortedData, value, false);
+        assertSearchA(0, sortedData, value, false);
     }
 
     @Test
@@ -115,7 +114,7 @@ public class BinSeaTest {
         int[] sortedData = {1};
         int value = -2;
 
-        assertSearchA(-1, sortedData, value, true);
+        assertSearchA(0, sortedData, value, true);
     }
 
     @Test
@@ -123,7 +122,7 @@ public class BinSeaTest {
         int[] sortedData = {1};
         int value = -2;
 
-        assertSearchA(0, sortedData, value, false);
+        assertSearchA(-1, sortedData, value, false);
     }
 
     @Test
@@ -147,7 +146,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 3, 4, 5};
         int value = 6;
 
-        assertSearchA(4, sortedData, value, true);
+        assertSearchA(-1, sortedData, value, true);
     }
 
     @Test
@@ -155,7 +154,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 3, 4, 5};
         int value = 7;
 
-        assertSearchA(-1, sortedData, value, false);
+        assertSearchA(4, sortedData, value, false);
     }
 
     @Test
@@ -163,7 +162,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 3, 4, 5};
         int value = -2;
 
-        assertSearchA(-1, sortedData, value, true);
+        assertSearchA(0, sortedData, value, true);
     }
 
     @Test
@@ -171,7 +170,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 3, 4, 5};
         int value = -2;
 
-        assertSearchA(0, sortedData, value, false);
+        assertSearchA(-1, sortedData, value, false);
     }
 
     @Test
@@ -179,7 +178,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 4, 5};
         int value = 3;
 
-        assertSearchA(2, sortedData, value, false);
+        assertSearchA(1, sortedData, value, false);
     }
 
 
@@ -188,7 +187,7 @@ public class BinSeaTest {
         int[] sortedData = {1, 2, 4, 5};
         int value = 3;
 
-        assertSearchA(1, sortedData, value, true);
+        assertSearchA(2, sortedData, value, true);
     }
 
     private void assertSearchA(int expected, int[] sortedData, int value, boolean lower) {
@@ -196,7 +195,7 @@ public class BinSeaTest {
     }
 
     private void assertSearchB(Interval expected, int[] sortedData, Interval valueRange) {
-        Interval actual = search(sortedData, valueRange);
+        Interval actual = BinSea.search(sortedData, valueRange);
         assertNotNull(actual);
         assertEquals(expected.toString(),
                 actual.toString());
