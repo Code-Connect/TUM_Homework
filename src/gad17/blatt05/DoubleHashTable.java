@@ -13,6 +13,7 @@ public class DoubleHashTable<K, V> {
   /*
    * Todo
    */
+  private Pair<K, V>[] hashTable; //TODO Rename after Testing
 
     /**
      * Diese Methode implementiert h(x, i).
