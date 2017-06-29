@@ -44,11 +44,6 @@ public class BinomialTreeNodeTest {
         Assert.assertEquals(expected, node.rank());
     }
 
-    @Test
-    public void rank_given10_returns10() throws Exception {
-        assertRank(10, buildTree(10));
-    }
-
     @Test(expected = Exception.class)
     public void merge_given_both_null_throw_exception() throws Exception {
         BinomialTreeNode.merge(null, null);
@@ -80,19 +75,24 @@ public class BinomialTreeNodeTest {
         assertRank(1, actual);
     }
 
-    private BinomialTreeNode buildTreeReverse(int rank) {
-        return buildTree(rank, rank - 1, -1);
+    @Test
+    public void rank_given10_returns10() throws Exception {
+        assertRank(10, buildTree(10));
     }
 
-    private BinomialTreeNode buildTree(int rank) {
-        return buildTree(rank, 0, 1);
+
+    static BinomialTreeNode buildTree(int rank) {
+        return buildTree(rank, 0);
     }
 
-    private BinomialTreeNode buildTree(int rank, int min) {
-        return buildTree(rank, min, 1);
+    static BinomialTreeNode buildTree(int rank, int min) {
+        if (rank <= 0) return new BinomialTreeNode(min);
+        return BinomialTreeNode.merge(buildTree(rank - 1,
+                min, 1),
+                buildTree(rank - 1, min + 1, 1));
     }
 
-    private BinomialTreeNode buildTree(int rank, int counter, int delta) {
+    static BinomialTreeNode buildTree(int rank, int counter, int delta) {
         if (rank <= 0) return new BinomialTreeNode(counter);
         return BinomialTreeNode.merge(buildTree(rank - 1,
                 counter, delta),
@@ -102,6 +102,18 @@ public class BinomialTreeNodeTest {
     @Test
     public void merge_givenRank1_Rank1_return_rank2() throws Exception {
         assertRank(2, buildTree(2));
+    }
+
+    @Test
+    public void merge_givenAGreaterB_returnB() throws Exception {
+        a = new BinomialTreeNode(99);
+        Assert.assertEquals(b, BinomialTreeNode.merge(a, b));
+    }
+
+    @Test
+    public void merge_givenBGreaterA_returnB() throws Exception {
+        b = new BinomialTreeNode(99);
+        Assert.assertEquals(a, BinomialTreeNode.merge(a, b));
     }
 
     @Test
@@ -116,11 +128,6 @@ public class BinomialTreeNodeTest {
 
     private void assertMin(int expected, BinomialTreeNode node) {
         Assert.assertEquals(expected, node.min());
-    }
-
-    @Test
-    public void min_giveIsLast_returnLastKey() throws Exception {
-        assertMin(0, buildTreeReverse(2));
     }
 
 
