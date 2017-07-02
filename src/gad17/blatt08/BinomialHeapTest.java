@@ -172,9 +172,9 @@ public class BinomialHeapTest {
     }
 
     @Test
-    public void deleteMin0_givenRanks0To3_givenHeapSize4_thenHeapSize3() throws Exception {
+    public void deleteMin0_givenRanks0To2_givenHeapSize3_thenHeapSize2() throws Exception {
         insert(0, 1, 2, 3, 4, 5, 6);
         test.deleteMin();
-        Assert.assertEquals(3, test.heap.size());
+        Assert.assertEquals(2, test.heap.size());
     }
 }
