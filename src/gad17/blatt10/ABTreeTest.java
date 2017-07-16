@@ -161,26 +161,31 @@ public class ABTreeTest {
 
     @Test
     public void height_givenEmpty_returns0() throws Exception {
-        Assert.assertEquals(0, test.height());
+        int expected = 0;
+        assertHeight(expected);
+    }
+
+    private void assertHeight(int expected) {
+        Assert.assertEquals(getString(test), expected, test.height());
     }
 
     @Test
     public void height_givenEmptyRoot_returns1() throws Exception {
         setField("root", buildNodeHeight(0, 1));
-        Assert.assertEquals(1, test.height());
+        assertHeight(1);
     }
 
     @Test
     public void height_givenRootHeight1_returns2() throws Exception {
         setField("root", buildNodeHeight(0, 2));
-        Assert.assertEquals(2, test.height());
+        assertHeight(2);
     }
 
     @Test
     public void height_givenRootHeightRandom() throws Exception {
         int height = 1 + new Random().nextInt(19);
         setField("root", buildNodeHeight(0, height));
-        Assert.assertEquals(height, test.height());
+        assertHeight(height);
     }
 
     @Test
@@ -326,14 +331,14 @@ public class ABTreeTest {
         int key = new Random().nextInt();
         insert(key);
         Assert.assertEquals(Arrays.asList(key), getField(getField("root"), "keys"));
-        Assert.assertEquals(1, test.height());
+        assertHeight(1);
     }
 
     @Test
     public void insert_givenEmpty_input0_1_2_thenKeysAre0_1_2() throws Exception {
         insert(0, 1, 2);
         Assert.assertEquals(Arrays.asList(0, 1, 2), getField(getField("root"), "keys"));
-        Assert.assertEquals(1, test.height());
+        assertHeight(1);
     }
 
     @Test
