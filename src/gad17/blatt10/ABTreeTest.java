@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 import java.util.function.Function;
+import java.util.stream.LongStream;
 
 public class ABTreeTest {
     private ABTree test;
@@ -487,5 +488,23 @@ public class ABTreeTest {
 
         Assert.assertTrue(getString(test), test.remove(-15));
         assertTree(expected);
+    }
+
+    @Test
+    public void insert_input0To500_integration() throws Exception {
+        assertHeight(0);
+        insert(LongStream.range(0, 1).mapToInt(value -> (int) value).toArray());
+        assertHeight(1);
+        insert(LongStream.range(1, 10).mapToInt(value -> (int) value).toArray());
+        assertHeight(2);
+        insert(LongStream.range(10, 20).mapToInt(value -> (int) value).toArray());
+        assertHeight(3);
+        insert(LongStream.range(20, 50).mapToInt(value -> (int) value).toArray());
+        assertHeight(4);
+        insert(LongStream.range(50, 200).mapToInt(value -> (int) value).toArray());
+        assertHeight(5);
+        insert(LongStream.range(200, 500).mapToInt(value -> (int) value).toArray());
+        assertHeight(6);
+        System.out.println(getString(test));
     }
 }
