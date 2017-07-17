@@ -4,6 +4,9 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Random;
+import java.util.stream.LongStream;
+
 public class ConnectedComponentsTest {
     private ConnectedComponents test;
     private Graph g;
@@ -49,6 +52,15 @@ public class ConnectedComponentsTest {
         addNodes(15);
         buildWay(2, 13);
         Assert.assertEquals(5, test.countConnectedComponents(g));
+    }
+
+    @Test
+    public void count_givenRandomNodesSize_givenEverySecondConnected_returnsHalf() throws Exception {
+        int times = new Random().nextInt(333) * 2;
+        addNodes(times);
+        LongStream.range(0, times).filter(i -> i % 2 == 0)
+                .forEach(i -> connect((int) i, (int) i + 1));
+        Assert.assertEquals(times / 2, test.countConnectedComponents(g));
     }
 
 
