@@ -5,12 +5,29 @@ import org.junit.Before;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 
 
-public class GraphTest {
+public class GraphTest extends Graph {
     private Graph g;
+
+    private int getIndex(Node node) {
+        //TODO adjust to your code
+        return node.index;
+    }
+
+    private Collection<Node> getConnected(Node a) {
+        //TODO adjust to your code
+        return a.connected;
+    }
+
+    private List<Node> getNodes() {
+        //TODO adjust to your code
+        return g.nodes;
+    }
 
     @Before
     public void setup() {
@@ -19,18 +36,13 @@ public class GraphTest {
 
     @Test
     public void constructor_givenNodesIsNull_thenNodesIsEmpty() {
-        Assert.assertEquals(true, g.nodes.isEmpty());
-    }
-
-    @Test
-    public void constructor_givenEdgesIsNull_thenEdgesIsEmpty() {
-        Assert.assertEquals(true, g.edges.isEmpty());
+        Assert.assertEquals(true, getNodes().isEmpty());
     }
 
     @Test
     public void addNode_givenNodesIsEmpty_thenNodesSizeEquals1() {
         g.addNode();
-        Assert.assertEquals(1, g.nodes.size());
+        Assert.assertEquals(1, getNodes().size());
     }
 
     @Test
@@ -47,24 +59,28 @@ public class GraphTest {
     @Test
     public void addNode_checkIndeciesFromFirstAdded() {
         g.addNode();
-        Assert.assertEquals(0, g.nodes.get(0).index);
+        assertIndex(0, 0);
+    }
+
+    private void assertIndex(int index, int expected) {
+        Assert.assertEquals(expected, getIndex(getNodes().get(index)));
     }
 
     @Test
     public void addNode_given2Elements_returnsIndex1() {
         int i = addNodes(2);
-        Assert.assertEquals(1, g.nodes.get(i - 1).index);
+        assertIndex(i - 1, 1);
     }
 
     @Test
     public void addNode_given10Elements_returnsIndex9() {
         int i = addNodes(10);
-        Assert.assertEquals(9, g.nodes.get(i - 1).index);
+        assertIndex(i - 1, 9);
     }
 
     @Test
     public void addNode_givenRandomElements() {
-        assertOverIndexes(j -> new Object[]{j, g.nodes.get(j).index});
+        assertOverIndexes(j -> new Object[]{j, getIndex(getNodes().get(j))});
     }
 
     private int addNodes(int times) {
@@ -81,13 +97,14 @@ public class GraphTest {
 
     @Test
     public void getNode_givenNodesSizeOne_ReturnsNodeAtIndexOne() {
-        addNodes(1);
-        Assert.assertEquals(g.nodes.get(0), g.getNode(0));
+        addNode();
+        g.nodes = new ArrayList<>(nodes);
+        Assert.assertEquals(nodes.get(0), g.getNode(0));
     }
 
     @Test
     public void getNode_givenNodesSizeRandom() {
-        assertOverIndexes(j -> new Object[]{g.nodes.get(j), g.getNode(j)});
+        assertOverIndexes(j -> new Object[]{getNodes().get(j), g.getNode(j)});
 
     }
 
@@ -98,10 +115,24 @@ public class GraphTest {
     }
 
     @Test
-    public void addEdge_givenEdgesEmpty_thenEdgesSizeIs2() {
+    public void addEdge_givenEdgesEmpty_thenEdgesSizeIs1() {
         addNodes(2);
-        g.addEdge(g.getNode(0), g.getNode(1));
-        Assert.assertEquals(2, g.edges.size());
+        Node a = g.getNode(0);
+        Node b = g.getNode(1);
+        g.addEdge(a, b);
+        Assert.assertEquals(1, getConnected(a).size());
+        Assert.assertEquals(1, getConnected(b).size());
+    }
+
+    @Test
+    public void addEdge_input2TimesSameEdge_givenEdgesEmpty_thenEdgesSizeIs1() {
+        addNodes(2);
+        Node a = g.getNode(0);
+        Node b = g.getNode(1);
+        g.addEdge(a, b);
+        g.addEdge(b, a);
+        Assert.assertEquals(1, getConnected(a).size());
+        Assert.assertEquals(1, getConnected(b).size());
     }
 
     @Test
@@ -131,7 +162,7 @@ public class GraphTest {
         for (int v : values)
             expected.add(g.getNode(v));
         Assert.assertArrayEquals(expected.toArray(),
-                g.edges.get(g.getNode(key)).toArray());
+                getConnected(g.getNode(key)).toArray());
     }
 
     @Test(expected = Exception.class)

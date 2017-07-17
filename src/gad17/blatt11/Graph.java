@@ -1,14 +1,14 @@
 package gad17.blatt11;
 
 import java.util.ArrayList;
-import java.util.Map;
+import java.util.Collection;
 
 public class Graph {
     public ArrayList<Node> nodes;
-    public Map<Node, ArrayList<Node>> edges;
 
     public class Node {
         public int index;
+        public Collection<Node> connected;
         // TODO
     }
 
