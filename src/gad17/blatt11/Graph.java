@@ -7,9 +7,9 @@ public class Graph {
     public ArrayList<Node> nodes;
 
     public class Node {
+        // TODO rename after Testing!
         public int index;
         public Collection<Node> connected;
-        // TODO
     }
 
     public Graph() {
