@@ -32,23 +32,23 @@ public class ConnectedComponentsTest {
     }
 
     @Test
-    public void count_givenGraphWithoutConnections_returns1() throws Exception {
+    public void count_givenGraphWithoutConnections_returns10() throws Exception {
         addNodes(10);
-        Assert.assertEquals(1, test.countConnectedComponents(g));
-    }
-
-    @Test
-    public void count_givenGraphWithWayLength10_returns10() throws Exception {
-        addNodes(10);
-        buildWay(0, 10);
         Assert.assertEquals(10, test.countConnectedComponents(g));
     }
 
     @Test
-    public void count_given15Nodes_givenGraphWithWayLength10_returns10() throws Exception {
+    public void count_givenGraphWithWayLength10_returns1() throws Exception {
+        addNodes(10);
+        buildWay(0, 10);
+        Assert.assertEquals(1, test.countConnectedComponents(g));
+    }
+
+    @Test
+    public void count_given15Nodes_givenGraphWithWayLength11_returns5() throws Exception {
         addNodes(15);
         buildWay(2, 13);
-        Assert.assertEquals(11, test.countConnectedComponents(g));
+        Assert.assertEquals(5, test.countConnectedComponents(g));
     }
 
 
